@@ -11,7 +11,8 @@ block content
     .col-sm-12
       h2 收入与支出登记
     .col-sm-12
-      form(class=horizontalFormClass, role="form", method="POST")
+      form(class=horizontalFormClass, role="form", method="POST", action="/finance/change_earning")
+        input(type='hidden', name='_csrf', value=token)
         .form-group
           label(class=formLabelClass, for="earning") 数值
           .col-sm-4

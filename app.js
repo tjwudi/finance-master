@@ -131,6 +131,7 @@ app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, 
  *  Finance Master 自定义routers
  */
 app.get('/finance', passportConf.isAuthenticated, financeController.index);
+app.post('/finance/change_earning', passportConf.isAuthenticated, financeController.changeEarning);
 
 /**
  * OAuth routes for sign-in.
