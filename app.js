@@ -18,6 +18,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var financeController = require('./controllers/finance');
 
 /**
  * API keys + Passport configuration.
@@ -125,6 +126,11 @@ app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, 
 app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTwitter);
 app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
 app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
+
+/**
+ *  Finance Master 自定义routers
+ */
+app.get('/finance', passportConf.isAuthenticated, financeController.index);
 
 /**
  * OAuth routes for sign-in.
