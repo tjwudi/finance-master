@@ -1,0 +1,25 @@
+extends layout 
+
+
+block content
+  - var horizontalFormClass = ['form-horizontal']
+  - var formLabelClass = ['col-sm-1', 'control-label']
+  - var formInputClass = ['form-control']
+  - var formButtonSubmitClass = ['btn btn-primary']
+
+  section.row
+    .col-sm-12
+      h2 收入与支出登记
+    .col-sm-12
+      form(class=horizontalFormClass, role="form", method="POST")
+        .form-group
+          label(class=formLabelClass, for="earning") 数值
+          .col-sm-4
+            input(type="number", class=formInputClass, id="earning", placeholder="正数为收入，负数为支出" step="0.01")
+        .form-group
+          label(class=formLabelClass, for="reason") 原因
+          .col-sm-4
+            input(type="text", class=formInputClass, id="reason", placeholder="原因")
+        .form-group
+          .col-sm-2.col-sm-offset-1
+            button(type="submit" class=formButtonSubmitClass) 确认

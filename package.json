@@ -35,5 +35,9 @@
     "connect-mongo": "~0.4.0",
     "twilio": "~1.5.0",
     "validator": "~3.2.1"
+  },
+  "devDependencies": {
+    "gulp-livereload": "~1.1.1",
+    "gulp": "~3.5.2"
   }
 }
